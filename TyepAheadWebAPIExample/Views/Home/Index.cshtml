@@ -41,7 +41,7 @@
                 },
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
                 prefetch: {
-                    url: '/api/values/GetAllBooks',
+                    url: '/api/books/GetAllBooks',
                     filter: function (books) {
                         return $.map(books, function (data) {
                             return {
@@ -52,7 +52,7 @@
                     }
                 },
                 remote: {
-                    url: '/api/values/SearchBooks?searchTerm=%QUERY',
+                    url: '/api/books/SearchBooks?searchTerm=%QUERY',
                     // the returned json contains an array of strings, but the Bloodhound
                     // suggestion engine expects JavaScript objects so this converts all of
                     // those strings into objects containing the properties, title and author
